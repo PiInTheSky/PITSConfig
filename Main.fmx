@@ -1,0 +1,276 @@
+object frmMain: TfrmMain
+  Left = 0
+  Top = 0
+  Caption = 'Pi In The Sky Configuration Tool V0.1'
+  ClientHeight = 577
+  ClientWidth = 833
+  Fill.Kind = Gradient
+  Fill.Gradient.Points = <
+    item
+      Color = xFF78B8FC
+      Offset = 0.000000000000000000
+    end
+    item
+      Color = xFF092F6D
+      Offset = 1.000000000000000000
+    end>
+  Fill.Gradient.StartPosition.X = 0.500000000000000000
+  Fill.Gradient.StartPosition.Y = 1.000000000000000000
+  Fill.Gradient.StopPosition.X = 0.499999970197677600
+  Fill.Gradient.StopPosition.Y = 0.000000000000000000
+  StyleBook = StyleBook1
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnActivate = FormActivate
+  OnCreate = FormCreate
+  OnClose = FormClose
+  DesignerMasterStyle = 0
+  object Panel1: TPanel
+    Align = Top
+    Size.Width = 833.000000000000000000
+    Size.Height = 73.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 3
+    object lblGeneral: TLabel
+      Align = Scale
+      StyledSettings = [Family, Size, Style, FontColor, Other]
+      HitTest = True
+      Position.X = 10.252314567565920000
+      Position.Y = 7.633986949920654000
+      Size.Width = 153.784439086914000000
+      Size.Height = 57.679008483886720000
+      Size.PlatformDefault = False
+      StyleLookup = 'LabelButtonStyle'
+      Text = 'General'
+      OnClick = lblGeneralClick
+    end
+    object lblRTTY: TLabel
+      Tag = 1
+      Align = Scale
+      StyledSettings = [Family, Size, Style, FontColor, Other]
+      HitTest = True
+      Position.X = 174.289581298828100000
+      Position.Y = 7.633986949920654000
+      Size.Width = 153.784515380859400000
+      Size.Height = 57.679008483886720000
+      Size.PlatformDefault = False
+      StyleLookup = 'LabelButtonStyle'
+      Text = 'RTTY'
+      OnClick = lblRTTYClick
+    end
+    object lblLoRa0: TLabel
+      Tag = 2
+      Align = Scale
+      StyledSettings = [Family, Size, Style, FontColor, Other]
+      HitTest = True
+      Position.X = 338.326110839843800000
+      Position.Y = 7.633986949920654000
+      Size.Width = 153.784545898437500000
+      Size.Height = 57.679008483886720000
+      Size.PlatformDefault = False
+      StyleLookup = 'LabelButtonStyle'
+      Text = 'LoRa 0'
+      OnClick = lblLoRa0Click
+    end
+    object lblLoRa1: TLabel
+      Tag = 3
+      Align = Scale
+      StyledSettings = [Family, Size, Style, FontColor, Other]
+      HitTest = True
+      Position.X = 502.362884521484400000
+      Position.Y = 8.000000000000000000
+      Size.Width = 153.784942626953100000
+      Size.Height = 57.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'LabelButtonStyle'
+      Text = 'LoRa 1'
+      OnClick = lblLoRa1Click
+    end
+    object lblAPRS: TLabel
+      Tag = 4
+      Align = Scale
+      StyledSettings = [Family, Size, Style, FontColor, Other]
+      HitTest = True
+      Position.X = 666.401123046875000000
+      Position.Y = 8.000000000000000000
+      Size.Width = 153.784484863281200000
+      Size.Height = 57.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'LabelButtonStyle'
+      Text = 'APRS'
+      OnClick = lblAPRSClick
+    end
+  end
+  object Panel2: TPanel
+    Align = Left
+    Margins.Left = 10.000000000000000000
+    Margins.Bottom = 10.000000000000000000
+    Position.X = 10.000000000000000000
+    Position.Y = 73.000000000000000000
+    Size.Width = 255.000000000000000000
+    Size.Height = 494.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 2
+    object lstSettings: TListBox
+      Align = Client
+      Size.Width = 255.000000000000000000
+      Size.Height = 494.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 5
+      DisableFocusEffect = True
+      ItemHeight = 30.000000000000000000
+      DefaultItemStyles.ItemStyle = ''
+      DefaultItemStyles.GroupHeaderStyle = ''
+      DefaultItemStyles.GroupFooterStyle = ''
+      OnChange = lstSettingsChange
+      Viewport.Width = 251.000000000000000000
+      Viewport.Height = 490.000000000000000000
+    end
+  end
+  object Panel3: TPanel
+    Align = Client
+    Margins.Left = 10.000000000000000000
+    Margins.Right = 10.000000000000000000
+    Margins.Bottom = 10.000000000000000000
+    Size.Width = 548.000000000000000000
+    Size.Height = 494.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    object Label1: TLabel
+      Align = Bottom
+      StyledSettings = [Family, Size, Style, FontColor, Other]
+      Margins.Top = 12.000000000000000000
+      Position.Y = 432.000000000000000000
+      Size.Width = 548.000000000000000000
+      Size.Height = 62.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'LabelButtonStyle'
+    end
+    object lblExplanation: TLabel
+      Align = Client
+      Size.Width = 548.000000000000000000
+      Size.Height = 346.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'LabelButtonStyle'
+      TextSettings.Trimming = Word
+    end
+    object lblEnabled: TLabel
+      Align = Top
+      StyledSettings = [Family, Size, Style, FontColor, Other]
+      Margins.Bottom = 12.000000000000000000
+      Size.Width = 548.000000000000000000
+      Size.Height = 62.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'LabelButtonStyle'
+    end
+    object chkValue: TCheckBox
+      Anchors = [akLeft, akRight, akBottom]
+      StyledSettings = [Style, FontColor]
+      Position.X = 8.000000000000000000
+      Position.Y = 440.000000000000000000
+      Size.Width = 532.000000000000000000
+      Size.Height = 49.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 9
+      Text = 'chkValue'
+      TextSettings.Font.Family = 'Arial'
+      TextSettings.Font.Size = 24.000000000000000000
+      OnChange = chkValueChange
+    end
+    object edtValue: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      Anchors = [akLeft, akRight, akBottom]
+      TabOrder = 11
+      TextSettings.Font.Family = 'Arial'
+      TextSettings.Font.Size = 24.000000000000000000
+      Position.X = 8.000000000000000000
+      Position.Y = 446.000000000000000000
+      Size.Width = 524.000000000000000000
+      Size.Height = 37.000000000000000000
+      Size.PlatformDefault = False
+      StyledSettings = [Style, FontColor]
+      OnChange = edtValueChange
+    end
+    object cmbValue: TComboBox
+      Anchors = [akLeft, akRight, akBottom]
+      Position.X = 8.000000000000000000
+      Position.Y = 448.000000000000000000
+      Size.Width = 524.000000000000000000
+      Size.Height = 33.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 12
+      OnChange = cmbValueChange
+    end
+    object chkEnabled: TCheckBox
+      Anchors = [akLeft, akTop, akRight]
+      StyledSettings = [Style]
+      Position.X = 16.000000000000000000
+      Position.Y = 5.000000000000000000
+      Size.Width = 532.000000000000000000
+      Size.Height = 49.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 8
+      Text = 'Enable'
+      TextSettings.Font.Family = 'Arial'
+      TextSettings.Font.Size = 24.000000000000000000
+      TextSettings.FontColor = claWhite
+      OnChange = chkEnabledChange
+    end
+  end
+  object StyleBook1: TStyleBook
+    Styles = <
+      item
+        ResourcesBin = {
+          464D585F5354594C4520322E350106104C6162656C427574746F6E5374796C65
+          03AC02060A50616E656C7374796C6503AD00005450463007544C61796F757400
+          095374796C654E616D6506104C6162656C427574746F6E5374796C6505416C69
+          676E070643656E7465720A53697A652E57696474680500000000000000F00540
+          0B53697A652E4865696768740500000000000000C404401453697A652E506C61
+          74666F726D44656661756C7408085461624F726465720200000A545265637461
+          6E676C6500095374796C654E616D65060F52656374616E676C65315374796C65
+          05416C69676E0706436C69656E740946696C6C2E4B696E6407044E6F6E650748
+          697454657374080C50616464696E672E4C6566740500000000000000A002400D
+          50616464696E672E52696768740500000000000000A002400A53697A652E5769
+          6474680500000000000000F005400B53697A652E486569676874050000000000
+          0000C404401453697A652E506C6174666F726D44656661756C74080C5374726F
+          6B652E436F6C6F720709636C6153696C766572105374726F6B652E546869636B
+          6E6573730500000000000000C000400B5374726F6B652E4A6F696E0705526F75
+          6E640005545465787400095374796C654E616D6506047465787405416C69676E
+          0706436C69656E74064C6F636B6564090748697454657374080C50616464696E
+          672E4C6566740500000000000000A002400D50616464696E672E526967687405
+          00000000000000A002400A53697A652E57696474680500000000000000C80540
+          0B53697A652E4865696768740500000000000000C404401453697A652E506C61
+          74666F726D44656661756C740804546578740604546578741854657874536574
+          74696E67732E466F6E742E46616D696C790605417269616C1654657874536574
+          74696E67732E466F6E742E53697A650500000000000000C00340165465787453
+          657474696E67732E466F6E74436F6C6F720708636C6157686974650000000054
+          5046300A5452656374616E676C6500095374796C654E616D65060A50616E656C
+          7374796C6505416C69676E070643656E7465720946696C6C2E4B696E6407044E
+          6F6E650748697454657374080A53697A652E57696474680500000000000000A0
+          08400B53697A652E48656967687405000000000000009205401453697A652E50
+          6C6174666F726D44656661756C74080B5374726F6B652E4B696E6407044E6F6E
+          650756697369626C65080000}
+      end>
+    Left = 56
+    Top = 496
+  end
+  object OpenDialog1: TOpenDialog
+    DefaultExt = 'txt'
+    FileName = 'pisky.txt'
+    Filter = 'pisky.txt|pisky.txt|Text Files (*.txt)|*.txt|All Files (*.*)|*.*'
+    FilterIndex = 0
+    Options = [ofHideReadOnly, ofFileMustExist, ofEnableSizing]
+    Title = 'Select PITS Configuration File (pisky.txt)'
+    Left = 161
+    Top = 497
+  end
+  object SaveDialog1: TSaveDialog
+    DefaultExt = 'txt'
+    FileName = 'pisky.txt'
+    Filter = 'pisky.txt|pisky.txt|Text Files (*.txt)|*.txt|All Files (*.*)|*.*'
+    FilterIndex = 0
+    Left = 162
+    Top = 409
+  end
+end
